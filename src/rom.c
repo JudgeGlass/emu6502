@@ -1,13 +1,25 @@
 #include "rom.h"
 
-void initRom(uint16_t resetVecPtr){
-    FILE *romBin = fopen("EEPROM.bin", "rb");
 
+void printRom(){
+    for(int i = 0; i < ROM_MAX; i++){
+        printf("(%x)0x%x ", i, rom[i]);
+        if(i % (0xF + 1) == 0) printf("\n");
+    }
+    printf("\n");
+}
+
+void initRom(uint16_t *PC){
+    FILE *romBin = fopen("/home/judgeglass/Projects/emu6502/bin/EEPROM.bin", "rb");
+    
     fread(rom, sizeof(rom), 1, romBin);
 
-    uint8_t hi = resetVecPtr >> 8;
-    uint8_t lo = resetVecPtr & 0x00FF;
+    uint8_t hi = rom[0xfffd - ROM_START];
+    uint8_t lo = rom[0xfffc - ROM_START];
 
-    rom[0xfffc] = lo;
-    rom[0xfffd] = hi;
+    printf("HI BYTE: %x\n", hi);
+    printf("LOW BYTE: %x\n", lo);
+
+    *PC = ((hi << 8) | lo);
+    printf("Setting Program Counter: 0x%x\n", *PC);
 }

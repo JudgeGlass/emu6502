@@ -1,14 +1,19 @@
 #include <stdio.h>
 
 #include "types.h"
+#include "rom.h"
 
 
 int main(){
     
-    uint16_t addr = 0x8000;
+    uint8_t hi = 0x80;
+    uint8_t lo = 0xAA;
+    uint16_t PC = 0;
 
-    printf("High byte: 0x%x\n", (addr >> 8));
-    printf("Low byte: 0x%x\n", (addr & 0x00FF));
+    printf("PTR: 0x%x\n", ((hi << 8) | lo));
+
+    initRom(&PC);
+
 
     return 0;
 }
