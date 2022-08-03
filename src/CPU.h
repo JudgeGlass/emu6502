@@ -13,9 +13,7 @@
 #ifndef __CPU_H__
 #define __CPU_H__
 
-typedef unsigned char uint8_t;
-typedef unsigned short uint16_t;
-
+#include "types.h"
 
 typedef struct CPU
 {
@@ -26,6 +24,16 @@ typedef struct CPU
     uint16_t PC;
 
 } cpu_t;
+
+typedef struct Flags{
+    uint8_t NEGATIVE;
+    uint8_t OVERFLOW;
+    uint8_t BREAK;
+    uint8_t DECIMAL_MODE;
+    uint8_t IRQ_DISABLED;
+    uint8_t ZERO;
+    uint8_t CARRY;
+};
 
 const uint8_t
     ADC_IMM         = 0X69, //ADC
