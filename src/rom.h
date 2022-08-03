@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 #include "types.h"
-#include "BUS.h"
+#include "bus.h"
 
 #define ROM_MAX 0x8000
 uint8_t rom[ROM_MAX];
