@@ -7,6 +7,6 @@
 uint8_t data[MEM_SIZE];
 
 
-void initMemory(uint16_t resetVecPtr);
+void initMemory();
 
 #endif
