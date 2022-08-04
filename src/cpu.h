@@ -47,9 +47,9 @@ cpu_t cpu;
 flags_t flags;
 
 
-#define   ADC_IMM           0X69//ADC
-#define   ADC_ZP            0X65
-#define   ADC_ZPX           0X75
+#define    ADC_IMM          0X69//ADC
+#define    ADC_ZP           0X65
+#define    ADC_ZPX          0X75
 #define    ADC_ABS          0X6D
 #define    ADC_ABSX         0X7D
 #define    ADC_ABSY         0X79
@@ -93,7 +93,7 @@ flags_t flags;
 #define    TYA              0X98
 #define    DEY              0X88
 #define    INY              0XC8 //STACK INSTRUCTIONS
-#define    TXS              0X94
+#define    TXS              0X9A
 #define    TSX              0XBA
 #define    PHA              0X48
 #define    PLA              0X68
@@ -310,7 +310,7 @@ static uint8_t getCycles(uint8_t op){
     case PLP:
     case STX_ZPY:
     case STX_ABS:
-    //case STY_ZPX:
+    case STY_ZPX:
     case STY_ABS:
         return 4;
 

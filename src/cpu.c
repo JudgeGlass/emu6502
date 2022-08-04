@@ -1,3 +1,14 @@
+/**
+ * @file cpu.c
+ * @author Hunter Wilcox (hunter.wilcox@judgeglass.net)
+ * @brief 
+ * @version 0.1
+ * @date 2022-08-04
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
+
 #include "cpu.h"
 
 void cpuInit(){

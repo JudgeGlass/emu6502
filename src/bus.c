@@ -1,3 +1,14 @@
+/**
+ * @file bus.c
+ * @author Hunter Wilcox (hunter.wilcox@judgeglass.net)
+ * @brief 
+ * @version 0.1
+ * @date 2022-08-04
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
+
 #include "bus.h"
 
 void writeBus(uint16_t addr, uint8_t _data){
