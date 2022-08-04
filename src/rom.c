@@ -17,9 +17,5 @@ void initRom(uint16_t *PC){
     uint8_t hi = rom[0xfffd - ROM_START];
     uint8_t lo = rom[0xfffc - ROM_START];
 
-    printf("HI BYTE: %x\n", hi);
-    printf("LOW BYTE: %x\n", lo);
-
     *PC = ((hi << 8) | lo);
-    printf("Setting Program Counter: 0x%x\n", *PC);
 }
